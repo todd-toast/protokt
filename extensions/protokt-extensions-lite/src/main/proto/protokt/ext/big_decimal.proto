@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package protokt.ext;
+
+import "protokt/protokt.proto";
+import "protokt/ext/big_integer.proto";
+
+option (protokt.file).kotlin_package = "com.toasttab.protokt.ext";
+
+message BigDecimal {
+    int32 scale = 1 [(protokt.property).non_null = true];
+    BigInteger int_val = 2 [
+        (protokt.property).wrap = "java.math.BigInteger",
+        (protokt.property).non_null = true
+    ];
+}

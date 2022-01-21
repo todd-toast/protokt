@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package protokt.ext;
+
+import "protokt/protokt.proto";
+
+option (protokt.file).kotlin_package = "com.toasttab.protokt.ext";
+
+message BigInteger {
+    bytes value = 1 [(protokt.property).non_null = true];
+}
